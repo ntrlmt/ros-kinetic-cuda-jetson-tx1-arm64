@@ -38,7 +38,7 @@ RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; catkin_init_workspace'
 WORKDIR /root/catkin_ws/
 RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash; catkin_make' && \
     echo "source /opt/ros/kinetic/setup.bash" >> $HOME/.bashrc && \
-    echo "source /catkin_ws/devel/setup.bash" >> $HOME/.bashrc
+    echo "source ~/catkin_ws/devel/setup.bash" >> $HOME/.bashrc
 
 # QtCreator ROS
 RUN add-apt-repository -y ppa:levi-armstrong/qt-libraries-xenial && \
