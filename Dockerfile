@@ -12,7 +12,8 @@ RUN apt-get install -y ros-kinetic-moveit \
                        ros-kinetic-usb-cam \
                        ros-kinetic-openni2-launch \
                        ros-kinetic-ros-control \
-                       ros-kinetic-ros-controllers
+                       ros-kinetic-ros-controllers \
+                       ros-kinetic-moveit-kinematics
 RUN apt-get install -y ros-kinetic-gazebo-ros-pkgs \
                        ros-kinetic-gazebo-ros-control \
                        ros-kinetic-kobuki-gazebo \
@@ -26,7 +27,7 @@ RUN rosdep init && rosdep update && \
     apt-get clean && apt-get auto-remove
 ## Gazebo
 #WORKDIR /tmp
-#RUN apt-get install mercurial
+#RUN apt-get install -y mercurial
 #RUN hg clone https://bitbucket.org/osrf/gazebo_models && \
 #    mkdir -p $HOME/.gazebo/models/ && \
 #    cp -r gazebo_models/* $HOME/.gazebo/models/ && \
