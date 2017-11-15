@@ -1,4 +1,4 @@
-FROM cuda-ubuntu16.04-jetson-tx1-arm64:cuda8.0-cudnn6.0
+FROM cuda-ubuntu16.04-jetson-tx1-arm64:cuda8.0-cudnn6.0-r28.1
 
 # ROS
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
