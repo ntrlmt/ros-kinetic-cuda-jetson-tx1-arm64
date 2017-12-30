@@ -22,16 +22,23 @@ RUN apt-get install -y ros-kinetic-rosbridge-server \
                        ros-kinetic-web-video-server \
                        ros-kinetic-tf2-web-republisher \
                        ros-kinetic-interactive-marker-proxy
+RUN apt-get install -y ros-kinetic-joy
 RUN rosdep init && rosdep update && \
     apt-get install -y python-rosinstall && \
     apt-get clean && apt-get auto-remove
-## Gazebo
+# PS4 dual shock4
+RUN apt-get install -y python-pip && \
+    pip install ds4drv && \
+    apt-get install -y bluez
+
+## Gazebo (not working)
 #WORKDIR /tmp
 #RUN apt-get install -y mercurial
 #RUN hg clone https://bitbucket.org/osrf/gazebo_models && \
 #    mkdir -p $HOME/.gazebo/models/ && \
 #    cp -r gazebo_models/* $HOME/.gazebo/models/ && \
 #    rm -r gazebo_models
+
 # ROS Settings
 RUN mkdir -p $HOME/catkin_ws/src
 WORKDIR /root/catkin_ws/src
